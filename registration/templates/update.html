@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block title %}Update{% endblock  %}
+
+{% block content %}
+<div class="main">
+    <form method="POST">
+        {% csrf_token %}
+        <label for="name">Update Name:</label>
+        <input type="text" id="name" name="name" value="{{ obj.name }}" required><br><br>
+    
+        <label for="contact">Update Contact:</label>
+        <input type="text" id="contact" name="contact" value="{{ obj.contact }}" required><br><br>
+    
+        <label for="email">Update Email:</label>
+        <input type="email" id="email" name="email" value="{{ obj.email }}" required><br><br>
+    
+        <label for="password">Password :</label>
+        <input type="password" name="password" id="password" placeholder="Enter your current password">
+    
+        <button type="submit">Update</button>
+        <a href="{% url 'home' %}">Cancel</a>
+    </form>
+</div>
+
+{% endblock  %}
