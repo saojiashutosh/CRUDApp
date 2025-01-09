@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block title %}Signup{% endblock %}
+
+{% block content %}
+<div class="mt-5">
+    <form action="{% url 'signup' %}" method="POST" class="card p-4 shadow-lg">
+        {% csrf_token %}
+        <h3 class="text-center mb-4">Signup Form</h3>
+
+        <div class="mb-3">
+            <label for="name" class="form-label">Name:</label>
+            <input type="text" id="name" name="name" class="form-control" placeholder="Enter your name" required>
+        </div>
+
+        <div class="mb-3">
+            <label for="contact" class="form-label">Contact:</label>
+            <input type="tel" id="contact" name="contact" class="form-control" placeholder="Enter your contact" required>
+        </div>
+
+        <div class="mb-3">
+            <label for="email" class="form-label">Email:</label>
+            <input type="email" id="email" name="email" class="form-control" placeholder="Enter your email" required>
+        </div>
+
+        <div class="mb-3">
+            <label for="password" class="form-label">Password:</label>
+            <input type="password" id="password" name="password" class="form-control" placeholder="Enter your password" required>
+        </div>
+
+        <div class="text-center">
+            <button type="submit" class="btn btn-primary">Signup</button>
+        </div>
+    </form>
+</div>
+{% endblock %}

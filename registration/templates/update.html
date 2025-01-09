@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block title %}Update{% endblock %}
+
+{% block content %}
+<div class="mt-5">
+    <form method="POST" class="card p-4 shadow-lg">
+        {% csrf_token %}
+        <h3 class="text-center mb-4">Update Details</h3>
+
+        <div class="mb-3">
+            <label for="name" class="form-label">Update Name:</label>
+            <input type="text" id="name" name="name" class="form-control" value="{{ obj.name }}" required>
+        </div>
+
+        <div class="mb-3">
+            <label for="contact" class="form-label">Update Contact:</label>
+            <input type="tel" id="contact" name="contact" class="form-control" value="{{ obj.contact }}" required>
+        </div>
+
+        <div class="mb-3">
+            <label for="email" class="form-label">Update Email:</label>
+            <input type="email" id="email" name="email" class="form-control" value="{{ obj.email }}" required>
+        </div>
+
+        <div class="mb-3">
+            <label for="password" class="form-label">Password:</label>
+            <input type="password" id="password" name="password" class="form-control" placeholder="Enter your current password">
+        </div>
+
+        <div class="text-center">
+            <button type="submit" class="btn btn-success">Update</button>
+            <a href="{% url 'home' %}" class="btn btn-danger">Cancel</a>
+        </div>
+    </form>
+</div>
+{% endblock %}
