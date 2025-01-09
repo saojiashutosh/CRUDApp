@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 
+<<<<<<< HEAD
 {% block title %}Home{% endblock %}
 
 {% block content %}
@@ -56,3 +57,32 @@
     </div>
 </div>
 {% endblock %}
+=======
+{% block title %} Home Page{% endblock  %}
+
+{% block content %}
+<h1>This is Home Page !!</h1>
+<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Contact</th>
+            <th>Email</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    
+    {% for user in users %}
+    <tr>
+        <td>{{user.name}}</td>
+        <td>{{user.contact}}</td>
+        <td>{{user.email}}</td>
+        <td><a href="{% url "update" user.id%}">update</a>
+            <a href="{% url "delete" user.id %}">delete</a>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+
+{% endblock  %}
+>>>>>>> 14b198a5adf2ecfc97e664c422dcf01faf41af14
